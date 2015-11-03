@@ -2,11 +2,12 @@ order deny,allow
 deny from all
 allow from 188.238.91.92
 
+
 # Use the front controller as index file. It serves as fallback solution when
 # every other rewrite/redirect fails (e.g. in an aliased environment without
 # mod_rewrite). Additionally, this reduces the matching process for the
 # startpage (path "/") because otherwise Apache will apply the rewritting rules
-# to each configured DirectoryIndex file (e.g. index.php, index.html, index.pl).
+# to each configured DirectoryIndex file (e.g. index.php, index.html, index.pl). Test
 DirectoryIndex app.php
 
 <IfModule mod_rewrite.c>
