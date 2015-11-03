@@ -3,6 +3,7 @@ $(document).ready(function()
 
 
 
+
 $('select').selectpicker();
 $(".post_ajax").submit(function(e)
 {
