@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{% block title %}Welcome to BetPowers!{% endblock %} | betpowers.com</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/style.css">
+     <link rel="stylesheet" href="/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="/bootstrap-select.min.css">
+    <!--[if lt IE 9]>
+	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+ 
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+ <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+	<script src="/bootstrap-select.min.js"></script>
+	<script src="/main.js"></script>
+{{ facebook_initialize({'xfbml': true, 'fbAsyncInit': 'onFbInit();'}) }}
+
+</head>
+    
+<body>
+
+	<section id="topbar">
+		<div class="responsive-container">
+			<div class="clearfix">
+				<ul class="toplinks">
+					<li><a href="/" title='{{ "home.link"|trans }}'>{{ "home.link"|trans }}</a></li>
+					<li><a href="/info" title='{{ "info.link"|trans }}'>{{ "info.link"|trans }}</a></li>
+					{% if app.user %}
+					<li><a href="/profile" title='{{ "profile.link"|trans }}'>{{ "profile.link"|trans }}</a></li>
+					<li><a href="/logout" title='{{ "logout.link"|trans }}'>{{ "logout.link"|trans }}</a></li>
+					{% else %}
+					<li><a href="/login" title='{{ "login.link"|trans }}'>{{ "login.link"|trans }}</a></li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</section>
+	
+	<div class="responsive-container">
+	
+		<header class="clearfix">
+			<div class="logo"><a href="/"><img src="/img/logo.png" height="120" width="140" alt="BetPowers"></a></div>
+			<div class="description"><img src="/img/description.png" height="120" width="466" alt=""></div>
+		</header>
+		
+		<section class="main_img">
+			<img src="/img/main_img.png" width="986" height="390" alt="BetPowers">
+		</section>
+		
+		<section id="main" class="data">
+     
+			{% if app.session.hasFlash('fos_user_success') %}
+  <div class="alertsuccess">
+        {{ app.session.flash('fos_user_success') }}
+ </div>
+{% endif %}
+   
+{% block content %}
+{% endblock content %}`
+		</section>
+		
+		<footer>
+		</footer>
+	
+	</div>
+
+</body>
+<script type="text/javascript">
+
+        var authurl = '{{ path('_security_check_facebook') }}';
+
+        function goLogIn(){
+            window.location = authurl;
+        }
+
+        function onFbInit() {
+            if (typeof(FB) != 'undefined' && FB != null ) {
+                FB.Event.subscribe('auth.statusChange', function(response) {
+                    setTimeout(goLogIn, 500);
+                });
+            }
+        }
+
+</script>
+</html>

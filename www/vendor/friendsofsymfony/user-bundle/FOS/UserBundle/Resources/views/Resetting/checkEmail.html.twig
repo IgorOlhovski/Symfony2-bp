@@ -1,0 +1,12 @@
+{% extends 'bpBundle:Default:layout.html.twig' %}
+
+{% block title %}{{ "register.title"|trans }}{% endblock title %}
+
+{% block content %}
+
+{% block fos_user_content %}
+<p>
+{{ 'resetting.check_email'|trans({'%email%': email}, 'FOSUserBundle') }}
+</p>
+{% endblock %}
+{% endblock content %}

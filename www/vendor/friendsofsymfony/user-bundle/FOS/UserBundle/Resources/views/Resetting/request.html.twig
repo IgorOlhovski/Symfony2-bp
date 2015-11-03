@@ -1,0 +1,16 @@
+{% extends 'bpBundle:Default:layout.html.twig' %}
+
+{% block title %}{{ "request_password.title"|trans }}{% endblock title %}
+
+{% block content %}
+<ul class="login_links">
+<li><a class="btn btn-grey btn-small" href="/login">{{ "login.link2"|trans }}</a></li>
+<li><a class="btn btn-grey btn-small" href="/register">{{ "register.link2"|trans }}</a></li>
+<li><a class="btn btn-grey btn-small active">{{ "forgot_password.link2"|trans }}</a></li>
+</ul>
+<br><br><br><br>
+<h2>{{ "request_password.title"|trans }}</h2>
+{% block fos_user_content %}
+{% include "FOSUserBundle:Resetting:request_content.html.twig" %}
+{% endblock fos_user_content %}
+{% endblock content %}

@@ -1,0 +1,628 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+overflow-y: scroll;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.bootstrap-select li
+{
+margin: 0 !important;
+float: none !important;
+}
+ul.cat .bootstrap-select:not([class*="span"])
+{
+width: 112px !important;
+
+}
+#sonata_user_profile_form_dateOfBirth .bootstrap-select:not([class*="span"])
+{
+margin-right: 5px !important;
+width: 70px !important;
+}
+label
+{
+display: inline !important;
+}
+.editname
+{
+display: none;
+padding: 3px 1px;
+top: 0;
+margin-top: 91px;
+border: 1px #999 solid;
+border-radius: 5px;
+
+font-family: Arial;
+width: 255px;
+text-align: center;
+background: #eee;
+position:absolute;
+z-index: 3;
+}
+.editname input
+{
+padding: 2px 3px;
+font-size: 12px;
+border: 1px #999 solid;
+border-radius: 5px;
+}
+/* CLEARFIX */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+.form-horizontal .controls
+{
+margin-left: 0 !important;
+margin-right: 10px !important;
+}
+.form-horizontal .control-group
+{
+margin: 0 !important;
+}
+/* H1, H2, H3, H4 */
+h2 {
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+h2.left {
+	float: left;
+	margin-right: 20px;
+}
+
+
+/* LINKS */
+a, li.active a {
+	text-decoration: none;
+	color: #20518a;
+}
+span.prev_next {
+
+	float: right;
+	position: relative;
+	top: -10px;
+}
+a.btn-green, a.btn-grey, a.btn-blue
+{
+float:left;
+margin-right: 10px;
+cursor: pointer;
+}
+a.btn-green:hover, a.btn-grey:hover, a.btn-blue:hover
+{
+color: -50%;
+}
+/* MISC */
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+td.valigntop {
+	vertical-align: top;
+}
+.nopadding {
+	padding: 0;
+}
+.black {
+	color: #333;
+}
+
+
+/* BUTTONS */
+a.btn, input[type="submit"] {
+	border-radius:5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	display: block;
+	-moz-box-shadow: 0 0 3px #666;
+	-webkit-box-shadow: 0 0 3px #666;
+	box-shadow: 0 0 3px #666;
+	color: #333;
+	text-align: center;
+}
+a, input[type="submit"]
+{
+border: none;
+cursor: pointer;
+}
+#main > div > form li, #main > form li
+{
+color:red;
+margin-top: 10px;
+}
+#main > .alerterror, #main > .badalert, #main > form > div > p, #main > div > form > div > p, #main > .alertsuccess
+{
+position:absolute;
+top: 0;
+font-weight: bold;
+color:red;
+margin-top: 7px;
+font-size: 12px;
+padding:3px 15px;
+background: #F8E0E0;
+border: 1px solid red;
+}
+.button-ajax
+{
+max-height: 20px;
+margin-top: 10px;
+margin-right: 10px;
+visibility: hidden;
+}
+#main > .alertsuccess, #main > .goodalert
+{
+color:green;
+background: #E0F8E0;
+border: 1px solid green;
+}
+#main > form, #main > div > form
+{
+margin-top: 10px;
+width: 250px;
+}
+#main > form input[type="text"], #main > form input[type="password"], #main > form input[type="email"], #main > div > form input[type="text"], #main > div > form input[type="password"], #main > div >form input[type="email"]
+{
+border: 1px #999 solid !important;
+border-radius: 5px;
+padding: 5px;
+width: 250px;
+}
+#main select
+{
+border: 1px #999 solid !important;
+border-radius: 5px;
+padding: 3px;
+}
+#main > form input, #main > div > form input, #main select, #main textarea
+{
+margin-top: 3px !important;
+margin-bottom: 10px !important;
+}
+#main > form input[type="submit"], #main > div >form input[type="submit"]
+{
+margin-top: 10px;
+}
+a.btn-small, input[type="submit"] {
+	padding: 7px 20px;
+}
+a.btn-large {
+	padding: 12px 30px;
+	border-radius:3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+a.btn-image {
+	line-height: 35px;
+	padding: 0 30px;
+	border-radius:3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	font-size: 16px;
+	color: #20518a;
+	font-weight: lighter;
+	margin-bottom: 20px;
+}
+a.btn-image img {
+	position: relative;
+	left: -5px;
+	top: 5px;
+}
+a.btn-image span {
+	position: relative;
+	top: -5px;
+}
+
+a.btn-grey.active
+{
+background: #E6E6E6;
+}
+a.btn-grey {
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #FCFCFC 0%, #EEEEEE 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #FCFCFC 0%, #EEEEEE 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #FCFCFC 0%, #EEEEEE 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FCFCFC), color-stop(1, #EEEEEE));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #FCFCFC 0%, #EEEEEE 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #FCFCFC 0%, #EEEEEE 100%);
+}
+a.btn-blue, input[type="submit"] {
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #1A7EBE 0%, #20518A 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #1A7EBE 0%, #20518A 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #1A7EBE 0%, #20518A 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1A7EBE), color-stop(1, #20518A));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #1A7EBE 0%, #20518A 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #1A7EBE 0%, #20518A 100%);
+color: #FFF !important;
+}
+a.btn-green {
+	/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #90D64D 0%, #4CA701 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #90D64D 0%, #4CA701 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #90D64D 0%, #4CA701 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #90D64D), color-stop(1, #4CA701));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #90D64D 0%, #4CA701 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #90D64D 0%, #4CA701 100%);
+color: #FFF;
+line-height: 45px;
+}
+
+
+
+/* RANGE INPUT */
+input[type='range'] {
+    -webkit-appearance: none !important;
+    -webkit-border-radius: 14px;
+    border-radius: 14px;
+    -moz-border-radius: 14px;
+    background: url('/img/bar_bg.png') 0 0 repeat;
+    display: block;
+    height: 14px;
+    width: 100%;
+    margin-top: 25px;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    -webkit-border-radius: 22px;
+    border-radius: 22px;
+    -moz-border-radius: 22px;
+    background-color: #fa9f00;
+    height: 22px;
+    width: 22px;
+}
+.range {
+	width: 38px;
+	height: 26px;
+	padding: 6px 12px;
+	background: url('/img/comments_img.png') 0 0 no-repeat;
+	color: #FFF;
+	margin: 10px 0;
+}
+textarea {
+	width: 490px;
+	height: 100px;
+	margin: 10px 0;
+	background-color: #d9d9d9;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border: 1px solid #999;
+}
+
+output { 
+  position: absolute;
+  width: 38px;
+  height: 26px;
+  line-height: 26px;
+  background: url('/img/comments_img.png') 0 0 no-repeat;
+  text-align: center; 
+  color: white; 
+  display: inline-block; 
+  top: 5px;
+  left: 0;
+}
+output:after { 
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -1px;
+}
+p.min, p.max {
+	position: absolute;
+	top: 25px;
+	left: 15px;
+}
+p.max {
+	left: 480px;
+}
+
+
+
+ul.reminders li {
+	margin-bottom: 10px;
+}
+ul.reminders li span{
+	position: relative;
+	top: -15px;
+	left: 10px;
+	color: #333;
+}
+
+/* BODY */
+body {
+min-width: 1020px;
+	background-color: #F6F6F6;
+	color: #333;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	border-bottom: 5px solid #20518a;
+}
+
+
+
+/* RESPONSIVE CONTAINER */
+.responsive-container {
+	width: 1000px;
+ padding-left: 10px;
+ padding-right: 10px;
+	margin: 0 auto;
+}
+.responsive-container .clearfix {
+	width: 100%;
+}
+
+
+/* TOP BAR */
+section#topbar {
+	background-color: #20518a;
+	color: #FFF;
+	padding: 5px 0;
+}
+section#topbar ul {
+	float: right;
+}
+section#topbar ul li {
+	list-style: none;
+	float: left;
+	border-left:1px solid #FFF;
+	padding: 0 5px;
+}
+section#topbar ul li:first-child {
+	border-left: none;
+}
+section#topbar ul li a {
+	color: #FFF;
+	display: block;
+}
+
+
+/* HEADER */
+header {
+	padding: 10px 0px;
+}
+header .logo, header .description {
+	float: left;
+}
+header .logo {
+	margin-right: 40px;
+}
+
+
+/* MAIN IMAGE */
+.main_img {
+	padding: 7px;
+	background-color: #FFF;
+	-moz-box-shadow: 0 0 5px #333;
+	-webkit-box-shadow: 0 0 5px #333;
+	box-shadow: 0 0 5px #333;
+}
+
+
+
+/* MAIN CONTENT */
+section#main {
+	padding: 40px 0 40px 0;
+}
+.data {
+	position: relative;
+}
+ul.own_coll {
+	position: absolute;
+	right: 0;
+	top: 55px;
+}
+ul.own_coll li {
+	font-size: 16px;
+	float: left;
+}
+ul.own_coll li.own a.btn {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+ul.own_coll li.coll a.btn {
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+ul.cat li {
+	float: left;
+	margin:0 10px 20px 0;
+}
+
+
+/* TABLES */
+table {
+	margin:0 0 40px 0;
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #E9E9E9 100%);
+	
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #E9E9E9 100%);
+	
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #E9E9E9 100%);
+	
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #E9E9E9));
+	
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #E9E9E9 100%);
+	
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #E9E9E9 100%);
+	-moz-box-shadow: 0 0 2px #888;
+	-webkit-box-shadow: 0 0 2px #888;
+	box-shadow: 0 0 2px #888;
+}
+table thead th, table tr td, table thead tr td {
+	border: 1px solid #CCC;
+	vertical-align: middle;
+	padding: 5px 10px;
+}
+table thead th {
+	position: relative;
+}
+table thead th span.add_to_fav {
+	position: absolute;
+	right: 10px;
+	top: 6px;
+	font-style: italic;
+}
+table thead th span.add_to_fav a {
+	text-decoration: underline;
+}
+table thead th span.add_to_fav img {
+	position: relative;
+	top: 5px;
+}
+table tr td {
+	padding: 0 10px;
+	min-height: 45px;
+	color: #20518a;
+	position: relative;
+}
+table tr td img.qmark {
+	position: absolute;
+	right: 10px;
+	z-index: 999 !important;
+	top: 10px;
+}
+table.sliders tr td {
+	padding: 15px 10px 10px 10px;
+}
+table tr td.time {
+	color: #333;
+}
+table td img.comments_icon {
+	position: relative;
+	top: 2px;
+}
+table td span.comments_value {
+	position: relative;
+	top: -5px;
+	left: 5px;
+}
+table tr td .meter-wrap {
+	width: 100%;
+	height: 45px;
+	position: relative;
+}
+table tr td .meter-wrap .meter-value {
+	height: 45px;
+}
+table tr td .meter-wrap .meter-value.left {
+	float: left;
+}
+table tr td .meter-wrap .meter-value.right {
+	float: right;
+}
+table tr td .meter-wrap .meter-text {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+}
+table tr td .meter-wrap .meter-text span.name {
+	position: relative;
+	top: -12px;
+	left: 5px;
+}
+
+
+
+/* FOOTER */

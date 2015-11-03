@@ -1,0 +1,114 @@
+{% extends 'bpBundle:Default:layout.html.twig' %}
+
+{% block title %}{{ "edit_team.title"|trans }}{% endblock title %}
+
+{% block content %}
+
+
+
+
+{% if new == 1 %}
+<section>
+<h2>Creating new team</h2><br>
+<form style="width: 190px !important;" action="/bpapi/team/{{ id }}" method="POST" class="post_ajax">
+
+<input type="hidden" class="slugz" placeholder="Slug of a team" value="" name="slug">
+<input type="text" onkeyup="$('.slugz').val(convertToSlug($(this).val()));" placeholder="Public name of a team" value="" name="name"> <br><br>
+  <span class="button-ajax" style="margin-left: 10px;"><img class="button-ajax" src="/ajax-loader.gif"></span>
+<input type="submit" style="float:left !important;" href="#" class="btn btn-small btn-blue alignright" value="{{ "save.buttons"|trans }}">
+</form>
+{% else %}
+<a id="editbutton" class="btn btn-image btn-grey alignleft"><img src="/img/tottenham_logo.png" alt="Tottenham"> <span>{{ "edit_team.title12"|trans }} {{ teamname }}</span></a>
+
+<a id="powers" class="btn btn-image btn-green alignleft" style="margin-left:300px;"><b>0</b>/800</a>
+
+<div class="clearfix"></div>
+
+<br/>
+<section>
+<form style="width: 100% !important;" action="/bpapi/PowerType/{{ id }}" method="POST" class="post_ajax">
+
+<span class="editname"><label>{{ "edit_team.title13"|trans }}</label><input type="text" name="name" value="{{ teamname }}"></span>
+<table class="sliders">
+	<thead>
+	<tr>
+		<td width="150" align="center" class="black">{{ "edit_team.title1"|trans }}</td>
+		<td width="490" align="center">
+  
+  <input class="ranger" id="range9" name="home_away" type="range" min=1 max=100 value={{ values[0] }}>
+      <output for="range9">{{ values[0] }}</output><p class="min">0</p><p class="max">100</p></td>
+		<td width="300">{{ "edit_team.title11"|trans }}</td>
+	</tr>
+	</thead>
+	<tr>
+		<td align="center" class="black">{{ "edit_team.title2"|trans }}</td>
+		<td width="490" align="center"><input class="ranger" id="range" name="management" type="range" min=1 max=100 value={{ values[1] }}>
+      <output for="range">{{ values[1] }}</output><p class="min">0</p><p class="max">100</p></td>
+      	<td rowspan="10" class="valigntop">
+	      	<ul class="reminders">
+		      	<li><img src="/img/lightning_bolt.png" alt=""> <span>{{ "edit_team.explain1"|trans }}</span></li>
+		      	<li><img src="/img/www.png" alt=""> <span>{{ "edit_team.explain2"|trans }}</span></li>
+		      	<li><img src="/img/ex_mark.png" alt=""> <span>{{ "edit_team.explain3"|trans }}</span></li>
+		      	<li><img src="/img/qmark_greybg.png" alt=""> <span>{{ "edit_team.explain4"|trans }}</span></li>
+	      	</ul>
+      	</td>
+	</tr>
+	<tr>
+		<td align="center" class="black">{{ "edit_team.title3"|trans }}</td>
+		<td width="490" align="center">
+		<input class="ranger" id="range2" name="goulies" type="range" min=1 max=100 value={{ values[2] }}>
+      <output for="range2">{{ values[2] }}</output><p class="min">0</p><p class="max">100</p></td>
+	</tr>
+	<tr>
+		<td align="center" class="black">{{ "edit_team.title4"|trans }}</td>
+		<td width="490" align="center">
+		<input class="ranger" id="range3" name="defence" type="range" min=1 max=100 value={{ values[3] }}>
+      <output for="range3">{{ values[3] }}</output><p class="min">0</p><p class="max">100</p></td>
+	</tr>
+	<tr>
+		<td align="center" class="black">{{ "edit_team.title5"|trans }}</td>
+		<td width="490" align="center">
+		<input class="ranger" id="range4" name="midfield" type="range" min=1 max=100 value={{ values[4] }}>
+      <output for="range4">{{ values[4] }}</output><p class="min">0</p><p class="max">100</p></td>
+	</tr>
+	<tr>
+		<td align="center" class="black">{{ "edit_team.title6"|trans }}</td>
+		<td width="490" align="center">
+		<input class="ranger" id="range5" name="attack" type="range" min=1 max=100 value={{ values[5] }}>
+      <output for="range5">{{ values[5] }}</output><p class="min">0</p><p class="max">100</p></td>
+	</tr>
+	<tr>
+		<td align="center" class="black">{{ "edit_team.title7"|trans }}</td>
+		<td width="490" align="center">
+		<input class="ranger" id="range6" name="bench" type="range" min=1 max=100 value={{ values[6] }}>
+      <output for="range6">{{ values[6] }}</output><p class="min">0</p><p class="max">100</p></td>
+	</tr>
+	<tr>
+		<td align="center" class="black">{{ "edit_team.title8"|trans }}</td>
+		<td width="490" align="center">
+		<input class="ranger" id="range7" name="set_pieces" type="range" min=1 max=100 value={{ values[7] }}>
+      <output for="range7">{{ values[7] }}</output><p class="min">0</p><p class="max">100</p></td>
+	</tr>
+	<tr>
+		<td align="center" class="black">{{ "edit_team.title9"|trans }}</td>
+		<td width="490" align="center"><input class="ranger" id="range8" name="tactics" type="range" min=1 max=100 value={{ values[8] }}>
+      <output for="range8">{{ values[8] }}</output><p class="min">0</p><p class="max">100</p></td>
+	</tr>
+	<tr>
+		<td align="center" class="black valigntop">{{ "edit_team.title10"|trans }}&nbsp;&nbsp;<img src="/img/qmark.png" alt=""></td>
+		<td><textarea name="description">{{ values[9] }}</textarea></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td align="right">
+		<a href="/profile" class="btn btn-small btn-grey alignright" style="margin-left:10px;">{{ "link_done_editing"|trans }}</a>
+  <span class="button-ajax"><img class="button-ajax" src="/ajax-loader.gif"></span>
+  <input type="submit" href="#" class="btn btn-small btn-blue alignright" value="{{ "save.buttons"|trans }}">
+		</td>
+	</tr>
+</table>
+</form>
+{% endif %}
+</section>
+
+{% endblock content %}

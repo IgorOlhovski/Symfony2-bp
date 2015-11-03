@@ -1,0 +1,88 @@
+home:
+    defaults:  { _controller: bpBundle:Default:home }
+    pattern: /
+    
+home_page:
+    defaults:  { _controller: bpBundle:Default:home }
+    pattern: /day/{page}
+    
+favor_ajax:
+    defaults:  { _controller: bpBundle:Default:favor }
+    pattern: /favorites/{action}/{table}/{id}
+
+
+
+info:
+    defaults:  { _controller: bpBundle:Default:info }
+    pattern: /info
+    
+profile_edit_team:
+    defaults:  { _controller: bpBundle:Default:edit_team }
+    pattern: /profile/edit_team
+
+all_get_list:
+    pattern:  /bpapi/{table}/all
+    defaults: { _controller: bpBundle:Default:getalllist, _format: ~ }
+    requirements:
+        _method: GET
+
+all_get_list2:       
+    pattern:  /bpapi/{table}/all/{page}
+    defaults: { _controller: bpBundle:Default:getalllist, _format: ~ }
+    requirements:
+        _method: GET
+
+all_get_list3:       
+    pattern:  /bpapi/{table}/all/{page}/{order}/{by}
+    defaults: { _controller: bpBundle:Default:getalllist, _format: ~ }
+    requirements:
+        _method: GET
+
+all_get:
+    pattern:  /bpapi/{table}/{slug}
+    defaults: { _controller: bpBundle:Default:getall, _format: ~ }
+
+_security_check_facebook:
+    pattern:   /facebook/login_check
+    defaults:  { _controller: bpBundle:Default:loginFb }
+
+_security_facebook_logout:
+    pattern:  /facebook/logout
+
+user_couple_fb_with_account:
+    pattern: /user/couple/facebook
+    defaults: { _controller: bpBundle:Default:connectFacebookWithAccount }
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile_show:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile/change-password
+
+soanata_user:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+

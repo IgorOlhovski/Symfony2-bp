@@ -1,0 +1,109 @@
+{% extends 'bpBundle:Default:layout.html.twig' %}
+
+{% block content %}
+
+
+{% if notfound %}
+<h2 class="left" style="width: 350px;">
+Matches not found
+</h2>
+<div class="clearfix"></div>
+
+<ul class="own_coll">
+	<li class="own active"><a href="#" title="" class="btn btn-grey btn-large">{{ "own.content_title"|trans }}</a></li>
+	<li class="coll"><a href="" title="#" class="btn btn-grey btn-large">{{ "collective.content_title"|trans }}</a></li>
+</ul>
+
+<ul class="cat clearfix">
+	<li><a href="/" title="" class="btn btn-grey btn-small">{{ "back.buttons"|trans }}</a></li>
+</ul>
+<br>
+<br>
+
+</div>
+{% else %}
+<h2 class="left" style="width: 350px;">
+{{ curdate }}
+ {% if favorites == "yes" %}
+ {% endif %}
+</h2>
+<span class="prev_next">
+
+
+<a {% if prev_button == false %}style="opacity: 0.4 !important;" {% else %} href="javascript: history.go(-1);"{% endif %} title="" class="">< Prev Day</a>
+ - 
+<a href="javascript: location.reload();" title="" class="">refresh</a>
+ - 
+<a {% if next_button == false %}style="opacity: 0.4 !important;" {% else %} href="/day/{{ nextpage }}{% if app.request.get('show') == "favorites" %}?show=favorites{% endif %}"{% endif %} title="" class="">Next Day ></a>
+
+</span>
+
+<div class="clearfix"></div>
+
+<ul class="own_coll">
+	<li class="own active"><a href="#" title="" class="btn btn-grey btn-large">{{ "own.content_title"|trans }}</a></li>
+	<li class="coll"><a href="" title="#" class="btn btn-grey btn-large">{{ "collective.content_title"|trans }}</a></li>
+</ul>
+
+<ul class="cat clearfix">
+
+ <select onchange="window.location=$(this).val();" class="selectpicker">
+  <option {% if app.request.get('show') == false %}selected="selected"{% endif %} value="/">{{ "all.content_buttons"|trans }}</option>
+  <option {% if app.request.get('show') == "favorites" %}selected="selected"{% endif %} value="{% if app.user %}/?show=favorites{% else %}/login{% endif %}">{{ "favourites.content_buttons"|trans }}</option>
+  <option {% if app.request.get('show') == "popular" %}selected="selected"{% endif %} value="/?show=popular">{{ "popular.content_buttons"|trans }}</option>
+  
+</select>
+
+</ul>
+
+{% for key,value in matches %}
+<table>
+<thead>
+<tr>
+<th scope="col" width="70"><img src="/img/england_flag.png" height="35" width="45" alt="England Flag"></th>
+<th scope="col" colspan="2" width="560" align="left">
+{{ key }}
+<span class="add_to_fav"><img src="/img/star.png" alt="Add To Favourites">
+{% if app.user %}
+<span class="ajax_fav" title="{{ key }}"></span>
+{% else %}
+<span><a href="/login">{{ "add_to_favor.content_title"|trans }}</a></span>
+{% endif %}
+</span>
+</th>
+<th scope="col" width="90">{{ "comments.content_title"|trans }}</th>
+<th scope="col" width="90">{{ "betting_choice.content_title"|trans }}</th>
+<th scope="col" width="90">{{ "stats.content_title"|trans }}</th>
+</tr>
+</thead>
+<tr>
+{% for keys,value in matches[key] %}
+<td align="center" class="time">{{ matches[key][keys]['begins_at']|date("h:m") }}</td>
+<td width="280" class="nopadding">
+<div class="meter-wrap">
+<div class="meter-value right" style="background-color: #d4e3fe; width: 25%;">
+<div class="meter-text">
+<img src="/img/arsenal_logo.png" alt="Arsenal"> <span class="name">{{ matches[key][keys]['team_home_name'] }}</span>
+</div>
+</div>
+</div>
+<img src="/img/qmark.png" class="qmark">
+</td>
+<td width="280" class="nopadding">
+<div class="meter-wrap">
+<div class="meter-value left" style="background-color: #d2e2c2; width: 75%;">
+</div>
+<div class="meter-text">
+<img src="/img/tottenham_logo.png" alt="Tottenham"> <span class="name">{{ matches[key][keys]['team_away_name'] }}</span>
+</div>
+</div> 
+</td>
+<td align="center"><img src="/img/comments_icon.png" alt="Comments" class="comments_icon"><span class="comments_value">12</span></td>
+<td align="center">102,0</td>
+<td align="center"><img src="/img/stats_icon.png" alt=""></td>
+</tr>
+{% endfor %}
+</table>
+{% endfor %}
+{% endif %}
+{% endblock content %}

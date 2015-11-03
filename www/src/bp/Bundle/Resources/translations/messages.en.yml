@@ -1,0 +1,93 @@
+updated_ok.sysmsg: An item has been updated or added successfully.
+not_updated.sysmsg: No entries were updated.
+updated_entries.sysmsg: Entries have been updated successfully.
+
+label_profile_gender: Your gender
+label_profile_firstname: Firstname
+label_profile_lastname: Lastname
+label_profile_website: Homepage
+label_profile_dob: Birthday
+label_profile_biography: Your biography
+label_profile_locale: Your location
+label_profile_timezone: Your timezone
+label_profile_phone: Your mobile phone
+link_edit_profile: Edit profile information
+link_edit_authentication: Edit account
+link_edit_team: Edit your team
+link_change_password: Change password
+link_done_editing: Done editing
+title_user_edit_authentication: Account information
+
+flash.changed_pass: The password has been changed
+flash.profile_updated: The profile has been updated
+flash.account_updated: An account information has been updated
+
+home.title: Welcome to BetPowers!
+info.title: Information
+login.title: Login
+register.title: Account Registration
+request_password.title: Request A New Password
+password_change.title: Change the password
+activation_link.title: An email has been sent
+confirm.title: Confirmation
+edit_team.title: Editing team
+create_team.title: Create a new team
+edit_club.title: Editing club
+create_club.title: Create a new club
+edit_tournament.title: Editing tournament
+create_tournament.title: Create a new tournament
+edit_match.title: Editing match
+create_match.title: Create a new match
+edit_profile1.title: Editing profile
+edit_profile2.title: Editing account information
+edit_profile3.title: Profile
+change_password.title: Change your password
+
+today_matches.h2: Today matches
+
+home.link: home
+info.link: info
+login.link: login
+profile.link: your account
+logout.link: logout
+login.link2: Login
+register.link2: Register
+forgot_password.link2: Forgot password?
+
+
+all.content_buttons: All
+comments.content_title: Comments
+betting_choice.content_title: Betting choice
+stats.content_title: Stats
+add_to_favor.content_title: add to favourites
+remove_from_favor.content_title: remove from favourites
+own.content_title: Own
+collective.content_title: Collective
+
+edit_team.title1: home/away
+edit_team.title2: management
+edit_team.title3: goulies
+edit_team.title4: defence
+edit_team.title5: midfield
+edit_team.title6: attack
+edit_team.title7: bench
+edit_team.title8: set pieces
+edit_team.title9: tactics
+edit_team.title10: notes
+edit_team.title11: use notemarks as reminders
+edit_team.explain1: Selitys 1
+edit_team.explain2: Selitys 2
+edit_team.explain3: Selitys 3
+edit_team.explain4: Selitys 4
+edit_team.title12: Edit Powers
+edit_team.title13: Edit the label for Power Type.
+
+prev_day.content_nav: Prev Day
+next_day.content_nav: Next Day
+
+popular.content_buttons: Popular
+favourites.content_buttons: Favourites
+edit_powers.content_buttons: Edit Powers %team_name%
+save.buttons: Save
+cancel.buttons: Cancel
+back.buttons: Back
